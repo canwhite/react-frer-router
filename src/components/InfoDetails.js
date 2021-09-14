@@ -14,7 +14,7 @@ function InfoDetails(props){
             setNum(val);
         })
     },[])
-
+    //goback如果反向传值最好还是用link
     function goback(){
         //props.history.goBack();
         props.history.replace({pathname:"/home",state:{aaa:123}})
