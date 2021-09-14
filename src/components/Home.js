@@ -22,7 +22,9 @@ function Home(props){
 
         console.log("state--",props.history.location);
         if(props.history.location.query){
-            info2();
+            if(props.history.location.query.aaa){
+                info2();
+            }
         }else{
             info1() //如果不想精确配置，也可以在这里做判断
         }
