@@ -30,6 +30,10 @@ let routes = [
     {
         path:"/details",
         component:InfoDetails
+    },
+    {
+        path:"/",
+        redirect:"/home"
     }
 ]
 
@@ -43,14 +47,18 @@ function App() {
                     
                     {
                         routes.map((route,index)=>{
-                            //如果是严格模式，说明没有子组件
+                            //开局重定向
+                            if(route.redirect){
+                                return  <Redirect  key={index} to={route.redirect} from={route.path} />
+                            }
+                            //严格模式
                             if(route.exact){
                                 return <Route exact key={index} path={route.path} render={
                                     props=>(
                                         <route.component  {...props} childroutes={route.routechilden}/>
                                     )
-                                }/>
-                            //如果有子组件
+                                } />
+                            //非严格模式
                             }else{
                                 return <Route  key={index} path={route.path} render={
                                     props=>(
@@ -60,8 +68,7 @@ function App() {
                             }
                         })
                     }  
-                    {/* 一开始重定向到home */}
-                    <Redirect to="/home"/>
+                   
             </Router>
         </div>
     );
