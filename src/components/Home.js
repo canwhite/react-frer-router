@@ -19,7 +19,14 @@ function Home(props){
         res$.subscribe(val=>{ 
             setData(val.data);
         })
-        info1();
+
+        console.log("state--",props.history.location.state);
+        if(props.history.location.state){
+            info2();
+        }else{
+            info1() //如果不想精确配置，也可以在这里做判断
+        }
+
     },[]);
 
     //componentDidUpdate,不加后边的[]

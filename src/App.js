@@ -9,7 +9,7 @@ import InfoDetails from "./components/InfoDetails"
 //routes
 let routes = [
     //exact以为这path名要精准匹配，完全满足这样的情况才能显示
-
+    //严格模式一般处理独立页面
     {
         path:"/home",
         component:Home,
@@ -19,12 +19,11 @@ let routes = [
                 // path:"/home/", //需要exact为true，精准匹配，防止info2的时候也匹配到它
                 path:"/home/info1",//进去之后在mount里自己做个更新
                 component:HomeInfo1,
-                
             },
             {
                 path:"/home/info2",
                 component:HomeInfo2,
-            }
+            },
         ]
     },
     {

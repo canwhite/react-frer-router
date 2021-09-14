@@ -15,7 +15,8 @@ function InfoDetails(props){
     },[])
 
     function goback(){
-        props.history.goBack();
+        //props.history.goBack();
+        props.history.replace({pathname:"/home",state:{aaa:123}})
     }
     return(
         <div> 

@@ -11,7 +11,7 @@ function HomeInfo2(props){
     }
     return(
         <div> 
-            <div>Info2</div>
+            <div>-Info2-</div>
             <div>
                 <button onClick={goto}>
                     details 

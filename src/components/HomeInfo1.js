@@ -2,7 +2,8 @@ import React from "react";
 function HomeInfo1(props){
     return(
         <div> 
-            Info1
+            <div>-Info1-</div>
+
         </div>
     )
 }
