@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from "react";
 import {count$} from "../store";
+import {Link} from "react-router-dom"
 function InfoDetails(props){
 
     const [data,setData] = useState("");
@@ -24,9 +25,13 @@ function InfoDetails(props){
             <div>query:{data}</div>
             <div>frer:{num}</div>
             <div> 
-                <button onClick={goback}>
-                    back
-                </button>
+                
+                    <Link to={{pathname:"/home",query:{
+                        aaa:"123"
+                    }}}>
+                        <button> goback</button>
+                    </Link>
+            
             </div>
         </div>
     )

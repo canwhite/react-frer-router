@@ -20,8 +20,8 @@ function Home(props){
             setData(val.data);
         })
 
-        console.log("state--",props.history.location.state);
-        if(props.history.location.state){
+        console.log("state--",props.history.location);
+        if(props.history.location.query){
             info2();
         }else{
             info1() //如果不想精确配置，也可以在这里做判断
