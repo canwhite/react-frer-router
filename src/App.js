@@ -16,7 +16,7 @@ let routes = [
         routechilden:[
             {
                 //进来之后默认显示
-                // path:"/home/", //需要exact为true，精准匹配，放置info2的时候也匹配到它
+                // path:"/home/", //需要exact为true，精准匹配，防止info2的时候也匹配到它
                 path:"/home/info1",//进去之后在mount里自己做个更新
                 component:HomeInfo1,
                 
