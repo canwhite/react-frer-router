@@ -12,7 +12,7 @@ function Home(props){
     useEffect(()=>{
         console.log("mount");
         console.log("props:",props);
-
+        
         count$.subscribe(val=>{
             setCount(val);
         })
@@ -20,7 +20,7 @@ function Home(props){
             setData(val.data);
         })
 
-        console.log("state--",props.history.location);
+        console.log("state--",props.history);
         if(props.history.location.query){
             if(props.history.location.query.aaa){
                 info2();
