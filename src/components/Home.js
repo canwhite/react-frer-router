@@ -19,12 +19,10 @@ function Home(props){
         res$.subscribe(val=>{ 
             setData(val.data);
         })
-
-        console.log("state--",props.history);
-        if(props.history.location.query){
-            if(props.history.location.query.aaa){
+        if(props.location.state){
+            if(props.location.state.flag=="detail"){
                 info2();
-            }
+            } 
         }else{
             info1() //如果不想精确配置，也可以在这里做判断
         }
@@ -52,14 +50,11 @@ function Home(props){
 
 
     function info1(){
-        props.history.push({
-            pathname:"/home/info1",
-        })
+        //这种是pushstate的方法，我们获取值
+        props.history.push("/home/info1")
     }
     function info2(){
-        props.history.push({
-            pathname:"/home/info2",
-        })
+        props.history.push("/home/info2")
     }
 
     return(

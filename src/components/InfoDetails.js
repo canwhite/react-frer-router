@@ -11,8 +11,8 @@ function InfoDetails(props){
 
     //接收传递过来的值
     useEffect(()=>{
-        console.log("data:",props.location.query.data);
-        setData(props.location.query.data);
+        console.log("data:",props.location.state.data);
+        setData(props.location.state.data);
         count$.subscribe(val=>{
             setNum(val);
         })
@@ -20,7 +20,8 @@ function InfoDetails(props){
     //goback如果反向传值最好还是用link
     function goback(){
         //props.history.goBack();
-        props.history.replace({pathname:"/home",state:{aaa:123}})
+        //props.history.replace({pathname:"/home",state:{aaa:123}})
+        props.history.push("/home",{flag:"detail"})
     }
     return(
         <div> 
@@ -36,11 +37,12 @@ function InfoDetails(props){
             </div>
 
             <div> 
-                    <Link to={{pathname:"/home",query:{
+                    {/* <Link to={{pathname:"/home",query:{
                         aaa:"123"
                     }}}>
                         <button> goback</button>
-                    </Link>
+                    </Link> */}
+                    <button onClick={goback}> goback </button>
             
             </div>
         </div>
