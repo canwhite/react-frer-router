@@ -1,12 +1,16 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect,useState ,createRef} from "react";
 import {Route} from "react-router-dom"
 //状态管理
 import {dispatch} from "frer";
 import {count$,res$} from "../store";
+import SonComp from "./SonComp";
+
 function Home(props){
 
     const [count,setCount] = useState(0);
     const [data,setData] = useState("");
+    let inputRef = createRef();
+
 
     //componentDidMount,加了[]
     useEffect(()=>{
@@ -26,6 +30,8 @@ function Home(props){
         }else{
             info1() //如果不想精确配置，也可以在这里做判断
         }
+
+    
 
     },[]);
 
@@ -48,7 +54,6 @@ function Home(props){
         })
     }
 
-
     function info1(){
         //这种是pushstate的方法，我们获取值
         props.history.push("/home/info1")
@@ -56,6 +61,13 @@ function Home(props){
     function info2(){
         props.history.push("/home/info2")
     }
+
+    function cusFunc(params){
+        console.log("Son调用了父类方法",params)
+        console.log(inputRef.current.value);
+    }
+
+
 
     return(
         <div> 
@@ -75,12 +87,27 @@ function Home(props){
                 }}>sub</button>
             </div>
 
+
             {/* 2.async */}
             <div> 
                 {/* 将func作为value传入或者写箭头函数 */}
                 <button onClick={getRes}>async test</button>
             </div>
             <div>{data}</div>
+
+
+            {/* comps */}
+            <div style={{marginTop:10}}>-- comps -- </div>
+           
+            {/* 输入框还是比较常用的 */}
+            <div> 
+                <div><input ref={inputRef}  type="text" /></div>
+                <SonComp style={{marginTop:3}} value={1} cusClick = {cusFunc} />
+            </div>
+
+           
+
+
             
 
             {/* router */}
