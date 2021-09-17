@@ -9,6 +9,7 @@ function Home(props){
 
     const [count,setCount] = useState(0);
     const [data,setData] = useState("");
+    const [message,setMessage] = useState("");
     let inputRef = createRef();
 
 
@@ -30,8 +31,6 @@ function Home(props){
         }else{
             info1() //如果不想精确配置，也可以在这里做判断
         }
-
-    
 
     },[]);
 
@@ -64,10 +63,17 @@ function Home(props){
 
     function cusFunc(params){
         console.log("Son调用了父类方法",params)
-        console.log(inputRef.current.value);
+        //两种获取方法
+        console.log("get inputValue from ref:",inputRef.current.value);
+        console.log("get inputValue from state:",message);//message可以直接使用
+        
+        
     }
-
-
+    //受控组件和非受控组件的区别在于，输入受代码控制还是全凭用户自主
+    const handleMessageChange = (e) => {
+        //从event里拿实时值
+        setMessage(e.target.value);
+    };
 
     return(
         <div> 
@@ -97,18 +103,17 @@ function Home(props){
 
 
             {/* comps */}
-            <div style={{marginTop:10}}>-- comps -- </div>
+            <div style={{marginTop:20}}>-- comps -- </div>
            
             {/* 输入框还是比较常用的 */}
             <div> 
-                <div><input ref={inputRef}  type="text" /></div>
+                <div>
+                    <input  ref={inputRef} type="text" onChange={handleMessageChange} />
+                </div>
                 <SonComp style={{marginTop:3}} value={1} cusClick = {cusFunc} />
             </div>
+            <div> {message}</div>
 
-           
-
-
-            
 
             {/* router */}
             <div style={{marginTop:20}}>
