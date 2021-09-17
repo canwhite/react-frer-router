@@ -69,9 +69,11 @@ function Home(props){
         
         
     }
+
+    //--------------------------------------------------------
     //受控组件和非受控组件的区别在于，输入受代码控制还是全凭用户自主
     const handleMessageChange = (e) => {
-        //从event里拿实时值
+        //从event里拿实时值，这种就算受代码控制的受控组件
         setMessage(e.target.value);
     };
 
