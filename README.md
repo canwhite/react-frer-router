@@ -7,6 +7,7 @@ frer在react中使用的demo
 2.路由react-router-dom
 3.纯函数
 4.useEffect替代的生命钩子
+5.eject转webpack白盒
 
 ```
 ## run
