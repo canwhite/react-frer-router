@@ -44,7 +44,7 @@ function Home(props){
         return ()=>{
             console.log("clean up");
         }
-    })
+    },[])
     //sync
     function getRes(){
         dispatch("res",{
