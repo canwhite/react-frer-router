@@ -1,6 +1,6 @@
 import React,{useEffect} from "react";
 
-function SonComp(props){
+function HomeSonComp(props){
     
     useEffect(()=>{
         console.log("----",props);
@@ -18,4 +18,4 @@ function SonComp(props){
         </div>
     )
 }
-export default SonComp;
+export default HomeSonComp;

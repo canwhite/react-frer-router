@@ -3,7 +3,7 @@ import {Route} from "react-router-dom"
 //状态管理
 import {dispatch} from "frer";
 import {count$,res$} from "../store";
-import SonComp from "./SonComp";
+import HomeSonComp from "./HomeSonComp";
 
 function Home(props){
 
@@ -112,7 +112,7 @@ function Home(props){
                 <div>
                     <input  ref={inputRef} type="text" onChange={handleMessageChange} />
                 </div>
-                <SonComp style={{marginTop:3}} value={1} cusClick = {cusFunc} />
+                <HomeSonComp style={{marginTop:3}} value={1} cusClick = {cusFunc} />
             </div>
             <div> {message}</div>
 
