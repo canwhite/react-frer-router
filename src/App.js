@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route,Redirect} from "react-router-dom"
 import Home from "./components/Home"
 import HomeInfo1 from "./components/HomeInfo1";
 import HomeInfo2 from "./components/HomeInfo2";
-import InfoDetails from "./components/InfoDetails"
+import InfoToDetails from "./components/InfoToDetails"
 //routes
 let routes = [
     //exact以为这path名要精准匹配，完全满足这样的情况才能显示
@@ -28,7 +28,7 @@ let routes = [
     },
     {
         path:"/details",
-        component:InfoDetails
+        component:InfoToDetails
     },
     {
         path:"/",

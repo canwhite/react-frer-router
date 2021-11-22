@@ -2,7 +2,7 @@ import React,{useEffect,useState} from "react";
 import {count$} from "../store";
 import Header  from "./Header";
 import {Link} from "react-router-dom"
-function InfoDetails(props){
+function InfoToDetails(props){
 
     const [data,setData] = useState("");
     const [num,setNum] = useState(0);   
@@ -48,4 +48,4 @@ function InfoDetails(props){
         </div>
     )
 }
-export default InfoDetails;
+export default InfoToDetails;
